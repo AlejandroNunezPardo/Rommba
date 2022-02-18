@@ -1,12 +1,17 @@
 import tkinter as tk
+import alimpiar
+import lista
+import diccionarios
+import script
+import tupla
 
 window = tk.Tk()
-window.title("Hello wold")
-window.geometry("300x300")
+window.title("Bienvenidos a POO")
+window.geometry("500x300")
 
-hello = tk.Label(text="Hello world!")
+hello = tk.Label(text="Welcome to the Seven Heaven")
 hello.pack()
-button = tk.Button(text="Click me!")
+button = tk.Button(text="Pusla")
 button.pack()
 
 tk.mainloop()

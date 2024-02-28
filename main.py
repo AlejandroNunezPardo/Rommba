@@ -1,17 +1,19 @@
-import tkinter as tk
-from tkinter import Frame
-import alimpiar
-import lista
-import script
-import tupla
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+from PyQt5.QtGui import QIcon
 
-window = tk.Tk()
-window.title("Actividad Roomba")
-window.geometry("500x300")
+def window():
+   app = QApplication(sys.argv)
+   widget = QWidget()
 
-hello = tk.Label(text="Welcome to the Seven Heaven")
-hello.pack()
-button = tk.Button(text="Pusla")
-button.pack()
+   textLabel = QLabel(widget)
+   textLabel.setText("NOS VAMOS DE ROOMBA")
+   textLabel.move(110,85)
 
-tk.mainloop()
+   widget.setGeometry(50,50,320,200)
+   widget.setWindowTitle("PyQt5 Example")
+   widget.show()
+   sys.exit(app.exec_())
+
+if __name__ == '__main__':
+   window()

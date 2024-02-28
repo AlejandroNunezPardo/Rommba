@@ -1,2 +1,0 @@
-# Rommba
-Proyecto De Roomba

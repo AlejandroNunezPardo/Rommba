@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import Frame
 import alimpiar
 import lista
-import diccionarios
 import script
 import tupla
 

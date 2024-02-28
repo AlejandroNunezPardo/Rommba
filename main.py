@@ -7,11 +7,11 @@ def window():
    widget = QWidget()
 
    textLabel = QLabel(widget)
-   textLabel.setText("NOS VAMOS DE ROOMBA")
+   textLabel.setText("NOS VAMOS DE ROOMBA!")
    textLabel.move(110,85)
 
-   widget.setGeometry(50,50,320,200)
-   widget.setWindowTitle("PyQt5 Example")
+   widget.setGeometry(150,150,320,200)
+   widget.setWindowTitle("Roombaa Time")
    widget.show()
    sys.exit(app.exec_())
 

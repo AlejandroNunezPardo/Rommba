@@ -24,23 +24,22 @@ pygame.display.set_caption("Roomba Minijuego")
 
 # Definir la clase Roomba
 class Roomba(pygame.sprite.Sprite):
-    def __init__(self, speed):
+    def __init__(self):
         super().__init__()
         self.image = pygame.Surface((40, 40), pygame.SRCALPHA)
         pygame.draw.circle(self.image, ORANGE, (20, 20), 20)
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH // 2, HEIGHT // 2)
-        self.speed = speed  # Nueva propiedad para la velocidad
 
     def update(self, keys):
         if keys[pygame.K_UP]:
-            self.rect.y -= self.speed
+            self.rect.y -= 5
         if keys[pygame.K_DOWN]:
-            self.rect.y += self.speed
+            self.rect.y += 5
         if keys[pygame.K_LEFT]:
-            self.rect.x -= self.speed
+            self.rect.x -= 5
         if keys[pygame.K_RIGHT]:
-            self.rect.x += self.speed
+            self.rect.x += 5
 
 # Definir la clase Obstáculo
 class Obstacle(pygame.sprite.Sprite):
@@ -101,7 +100,7 @@ class Button(pygame.sprite.Sprite):
 # Definir la función para iniciar el juego
 def start_game(speed):
     all_sprites = pygame.sprite.Group()
-    roomba = Roomba(speed)  # Pasar la velocidad al crear el Roomba
+    roomba = Roomba()
     all_sprites.add(roomba)
 
     obstacles = pygame.sprite.Group()
@@ -196,9 +195,9 @@ def select_speed():
     screen.blit(text_surface, text_rect)
 
     buttons = pygame.sprite.Group()
-    button_slow = Button("Slow", 250, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Slow"))
-    button_normal = Button("Normal", 400, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Normal"))
-    button_fast = Button("Fast", 550, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Fast"))
+    button_slow = Button("Slow", 200, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Slow"))
+    button_normal = Button("Normal", 350, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Normal"))
+    button_fast = Button("Fast", 500, 400, 100, 50, BLACK, GRAY, WHITE, lambda: set_speed("Fast"))
     buttons.add(button_slow, button_normal, button_fast)
 
     while True:
